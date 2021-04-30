@@ -1,1 +1,4 @@
-# -2021-MSC-PO-Monkey_On_Mars
+# Monkey On Mars
+Projet portes ouvertes
+
+Eduardo Rocha / Joshua Frein / Sévan Bendit
