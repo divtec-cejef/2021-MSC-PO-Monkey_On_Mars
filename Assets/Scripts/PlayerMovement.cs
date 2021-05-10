@@ -11,23 +11,15 @@ public class PlayerMovement : MonoBehaviour
     public Rigidbody2D rb;
     private Vector3 velocity = Vector3.zero;
     private float horizontalMovement;
-    private float rightTrigger;
 
     void Update()
     {
-        horizontalMovement = Input.GetAxis("Horizontal") * moveSpeedPlayer * Time.deltaTime * 14;
-        rightTrigger = Input.GetAxis("Right Trigger");
+        horizontalMovement = Input.GetAxis("Horizontal") * moveSpeedPlayer * Time.deltaTime * 2;
 
         if (Input.GetButtonDown("Jump"))
         {
             isJumping = true;
         }
-
-        if (rightTrigger > 0)
-        {
-            isJumping = true;
-        }
-
     }
 
     void FixedUpdate()
