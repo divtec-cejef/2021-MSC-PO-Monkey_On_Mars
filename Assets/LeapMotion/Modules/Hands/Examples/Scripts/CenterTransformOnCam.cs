@@ -15,7 +15,7 @@ public class CenterTransformOnCam : MonoBehaviour {
 
   // Update is called once per frame
   void Update() {
-    Vector3 centeredVector = new Vector3(Camera.position.x, Camera.position.y - .2f, Camera.position.z);
+    Vector3 centeredVector = new Vector3(Camera.position.x, Camera.position.y - .2f);
     transform.position = centeredVector;
   }
 }

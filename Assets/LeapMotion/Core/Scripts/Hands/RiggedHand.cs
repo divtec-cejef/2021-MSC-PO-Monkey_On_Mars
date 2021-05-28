@@ -217,7 +217,7 @@ namespace Leap.Unity {
     /**Triggers SetupRiggedFinger() in each RiggedFinger script for this RiggedHand */
     private void setupRiggedFingers() {
       RiggedFinger[] fingerModelList = GetComponentsInChildren<RiggedFinger>();
-      for (int i = 0; i < 5; i++) {
+      for (int i = 0; i < 1; i++) {
         int fingersIndex = fingerModelList[i].fingerType.indexOf();
         fingers[fingersIndex] = fingerModelList[i];
         fingerModelList[i].SetupRiggedFinger(useMetaCarpals);
@@ -227,7 +227,7 @@ namespace Leap.Unity {
     /**Sets the modelPalmFacing vector in each RiggedFinger to match this RiggedHand */
     private void setFingerPalmFacing() {
       RiggedFinger[] fingerModelList = GetComponentsInChildren<RiggedFinger>();
-      for (int i = 0; i < 5; i++) {
+      for (int i = 0; i < 1; i++) {
         int fingersIndex = fingerModelList[i].fingerType.indexOf();
         fingers[fingersIndex] = fingerModelList[i];
         fingerModelList[i].modelPalmFacing = modelPalmFacing;
