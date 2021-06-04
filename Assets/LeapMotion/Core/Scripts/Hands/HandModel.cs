@@ -71,23 +71,25 @@ namespace Leap.Unity{
     * @returns A Quaternion representing the rotation of the hand.
     */
     public Quaternion GetPalmRotation() {
-      if (hand_ != null) {
-        // The hand Basis vectors are calculated explicitly.  This requires using Basis.CalculateRotation()
-        // instead of Basis.quaternion.
-        return hand_.Basis.CalculateRotation();
-      }
-      if (palm) {
-        return palm.rotation;
-      }
-      return Quaternion.identity;
-    }
+            if (hand_ != null)
+            {
+                // The hand Basis vectors are calculated explicitly.  This requires using Basis.CalculateRotation()
+                // instead of Basis.quaternion.
+                return hand_.Basis.CalculateRotation();
+            }
+            if (palm)
+            {
+                return palm.rotation;
+            }
+            return Quaternion.identity;
+        }
 
     /** Calculates the direction vector of the hand in global coordinates.
     * @returns A Vector3 representing the direction of the hand.
     */
     public Vector3 GetPalmDirection() {
       if (hand_ != null) {
-        return hand_.Direction.ToVector3();
+        return hand_.Direction.ToVector3(); 
       }
       if (palm) {
         return palm.forward;

@@ -114,7 +114,7 @@ namespace Leap.Unity {
             }
 
             if (Input.GetKeyDown(stepDownKey)) {
-              roomScaleHeightOffset -= stepSize;
+              roomScaleHeightOffset -= stepSize ;
             }
           }
 

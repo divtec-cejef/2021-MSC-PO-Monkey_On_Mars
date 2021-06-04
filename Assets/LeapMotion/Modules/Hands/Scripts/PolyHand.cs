@@ -53,7 +53,7 @@ namespace Leap.Unity {
     protected void SetPalmOrientation() {
       if (palm != null) {
         palm.position = GetPalmPosition();
-        palm.rotation = GetPalmRotation();
+        
       }
     }
   }
