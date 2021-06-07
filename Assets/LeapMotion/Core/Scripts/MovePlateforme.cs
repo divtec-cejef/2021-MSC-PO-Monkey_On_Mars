@@ -8,7 +8,10 @@ public class MovePlateforme : MonoBehaviour
 {
     Rigidbody2D m_Rigidbody;
     float m_Speed;
+    //position de la main du leap motion
     public Transform transformLeapMotion;
+
+    //position de la plateforme avec la main du leap motion
     public Transform transformMe;
 
     void Start()
@@ -22,9 +25,7 @@ public class MovePlateforme : MonoBehaviour
     void Update()
     {
 
-        print(transform.position.x);
-
-        transformMe.position = new Vector3(transformLeapMotion.position.x * 100, 10, 10);
+        transformMe.position = new Vector3(transformLeapMotion.position.x * (-100), transformMe.position.y, transformMe.position.z);
 
         
     }
