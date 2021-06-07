@@ -1,33 +1,31 @@
 using System.Collections;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
+using Leap;
 
 public class MovePlateforme : MonoBehaviour
-
 {
+    Rigidbody2D m_Rigidbody;
+    float m_Speed;
+    public Transform transformLeapMotion;
+    public Transform transformMe;
 
-    public float moveSpeedPlateforme;
-
-
-    public Rigidbody2D rb;
-    private Vector3 velocity = Vector3.zero;
-    private float horizontalMovement;
+    void Start()
+    {
+        //Fetch the Rigidbody component you attach from your GameObject
+        m_Rigidbody = GetComponent<Rigidbody2D>();
+        //Set the speed of the GameObject
+        m_Speed = 10.0f;
+    }
 
     void Update()
     {
-        horizontalMovement = Input.GetAxis("Horizontal") * moveSpeedPlateforme * Time.deltaTime * 2;
+
+        print(transform.position.x);
+
+        transformMe.position = new Vector3(transformLeapMotion.position.x * 100, 10, 10);
+
         
     }
-
-    void FixedUpdate()
-    {
-        MovePlayer(horizontalMovement);
-    }
-
-    void MovePlayer(float _horizontalMovement)
-    {
-        Vector3 targetVelocity = new Vector2(_horizontalMovement, rb.velocity.y);
-        rb.velocity = Vector3.SmoothDamp(rb.velocity, targetVelocity, ref velocity, .05f);
-
-    }
-}
+}  
