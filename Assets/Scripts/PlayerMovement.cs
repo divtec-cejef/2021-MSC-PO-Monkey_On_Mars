@@ -29,8 +29,7 @@ void Update()
         {
             isJumping = true;
         }
-
-
+        
     }
 
     void FixedUpdate()
@@ -65,4 +64,5 @@ void Update()
         Gizmos.DrawWireSphere(groundCheckLeft.position, groundCheckRadius);
         Gizmos.DrawWireSphere(groundCheckRight.position, groundCheckRadius);
     }
+    
 }
