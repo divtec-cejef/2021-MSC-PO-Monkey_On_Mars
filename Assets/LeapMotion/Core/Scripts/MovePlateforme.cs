@@ -28,7 +28,8 @@ public class MovePlateforme : MonoBehaviour
        
         print(transformPalm.position.y);
 
-        transformMe.position = new Vector3(transformPalm.position.x * (-100), transformPalm.position.y, transformMe.position.z);
+        //Nous faisons des calculs pour positionner la plateforme correctement devant l'écran
+        transformMe.position = new Vector3(transformPalm.position.x * (-100), transformPalm.position.y * 40 + 65, transformMe.position.z);
         
         
     }
