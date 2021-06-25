@@ -19,6 +19,11 @@ public class PlayerMovement : MonoBehaviour
     private Vector3 velocity = Vector3.zero;
     private float horizontalMovement;
 
+    public GameObject plateformeClonable;
+    public bool clonePlateforme;
+    public bool firstJump = false;
+    public Transform transformMe;
+    public Transform transformPalm;
     void Update()
     {
         //initialise le "isGrounded" pour savoir quand est-ce que le personne touche le sol
@@ -37,7 +42,7 @@ public class PlayerMovement : MonoBehaviour
 
     void FixedUpdate()
     {
-        //lance ce qu'il faut pour que le joueur ce déplace de gauche à droite
+        //lance ce qu'il faut pour que le joueur se déplace de gauche à droite
         MovePlayer(horizontalMovement);
     }
 
@@ -49,14 +54,39 @@ public class PlayerMovement : MonoBehaviour
         //si il touche le sol
         if (isGrounded == true)
         {
-            //remets la variable du nobre de saut à 0
+            //remets la variable du nombre de saut à 0
             numberJump = 0;
+
+            
+            
+            if (clonePlateforme == false)
+            {
+                if (firstJump == true)
+                {
+
+                    //clone une plateforme quand il touche le sol
+                    GameObject clone;
+                    clone = Instantiate(plateformeClonable, new Vector3(transformPalm.position.x * (-100), transformMe.position.y, transformMe.position.z), transform.rotation);
+                    clonePlateforme = true;
+                }
+            }
+
+
+        }
+        if (numberJump == 2)
+        {
+            firstJump = true;
         }
 
-        //si le joueur touche le sol ou le nombr ede saut est plus petit que 3
+        if (numberJump != 0)
+        {
+            clonePlateforme = false;
+        }
+
+        //si le joueur touche le sol ou le nombre de sauts est plus petit que 3
         if (isGrounded == true || numberJump < 3)
         {
-            //alors si le boutton de saut est prèssé
+            //alors si le boutton de saut est pressé
             if (isJumping == true)
             {
                 //fait un saut
@@ -68,7 +98,7 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    //sert à gère si les gizmos touche une zone de colision ou non
+    //sert à gérer si les gizmos touchent une zone de colision ou non
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.red;
