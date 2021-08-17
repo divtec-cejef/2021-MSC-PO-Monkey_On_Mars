@@ -31,17 +31,12 @@ public class MovePlateforme : MonoBehaviour
     void Update()
     {
 
-
-
         //pour que la plateforme suive le singe avec un espace de 2
         //transformMe.position = new Vector3(transformPalm.position.x * (-100), monkey.transform.position.y - 2, transformMe.position.z);
 
-        
-
         posPlateforme = monkey.transform.position.y;
 
-
-        print(posPlateforme);
+        //print(posPlateforme);
 
         if (monkey.transform.position.y <= (transformMe.position.y + 2))
         {
@@ -54,7 +49,6 @@ public class MovePlateforme : MonoBehaviour
         }
 
         
-
         //Nous faisons des calculs pour positionner la plateforme correctement devant l'écran
         //transformMe.position = new Vector3(transformPalm.position.x * (-100), transformPalm.position.y * 40 + 65, transformMe.position.z);
         

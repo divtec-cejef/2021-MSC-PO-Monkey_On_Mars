@@ -24,6 +24,8 @@ public class PlayerMovement : MonoBehaviour
     public bool firstJump = false;
     public Transform transformMe;
     public Transform transformPalm;
+    public GameObject monkey;
+
     void Update()
     {
         //initialise le "isGrounded" pour savoir quand est-ce que le personne touche le sol
@@ -32,7 +34,7 @@ public class PlayerMovement : MonoBehaviour
         //initialise variable pour les mouvement gauche droite
         horizontalMovement = Input.GetAxis("Horizontal") * moveSpeedPlayer * Time.deltaTime;
 
-        //test si le boutton de saut est prèssé ou non
+        //test si le bouton de saut est pressé ou non
         if (Input.GetButtonDown("Jump"))
         {
             isJumping = true;
@@ -57,20 +59,23 @@ public class PlayerMovement : MonoBehaviour
             //remets la variable du nombre de saut à 0
             numberJump = 0;
 
-            
-            
+
             if (clonePlateforme == false)
             {
-                if (firstJump == true)
+               
+                if (monkey.transform.position.y >= (transformMe.position.y))
                 {
 
-                    //clone une plateforme quand il touche le sol
-                    GameObject clone;
-                    clone = Instantiate(plateformeClonable, new Vector3(transformPalm.position.x * (-100), transformMe.position.y, transformMe.position.z), transform.rotation);
-                    clonePlateforme = true;
+                    if (firstJump == true)
+                    {
+
+                        //clone une plateforme quand il touche le sol
+                        GameObject clone;
+                        clone = Instantiate(plateformeClonable, new Vector3(transformPalm.position.x * (-100), transformMe.position.y, transformMe.position.z), transform.rotation);
+                        clonePlateforme = true;
+                    }
                 }
             }
-
 
         }
         if (numberJump == 2)
