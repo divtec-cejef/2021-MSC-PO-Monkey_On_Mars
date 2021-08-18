@@ -59,16 +59,15 @@ public class PlayerMovement : MonoBehaviour
             //remets la variable du nombre de saut à 0
             numberJump = 0;
 
-
+            // Teste si la variable clonePlateforme est égal à false ou pas
             if (clonePlateforme == false)
             {
-               
-                if (monkey.transform.position.y >= (transformMe.position.y))
+                //Teste si la position du singe est plus grande que la position de la plateforme controlée par le LeapMotion
+                if (monkey.transform.position.y >= (transformMe.position.y + 1))
                 {
-
+                    //Test si c'est le premier saut
                     if (firstJump == true)
                     {
-
                         //clone une plateforme quand il touche le sol
                         GameObject clone;
                         clone = Instantiate(plateformeClonable, new Vector3(transformPalm.position.x * (-100), transformMe.position.y, transformMe.position.z), transform.rotation);

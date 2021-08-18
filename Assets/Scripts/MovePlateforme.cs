@@ -24,9 +24,8 @@ public class MovePlateforme : MonoBehaviour
         m_Rigidbody = GetComponent<Rigidbody2D>();
         //Set the speed of the GameObject
         m_Speed = 10.0f;
-        
+    }        
 
-    }
 
     void Update()
     {
