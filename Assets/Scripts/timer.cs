@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class timer : MonoBehaviour
 {
@@ -26,6 +27,8 @@ public class timer : MonoBehaviour
             }
             else
             {
+                //charge la scene de jeu (quand on appuiera sur le bouton)
+                SceneManager.LoadScene("ClassementScene");
                 Debug.Log("Time has run out!");
                 timeRemaining = 0;
                 timerIsRunning = false;

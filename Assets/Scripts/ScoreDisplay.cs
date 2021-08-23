@@ -4,7 +4,7 @@ using UnityEngine.UI;
 public class ScoreDisplay : MonoBehaviour
 {
     public Text scoreText;
-    static float score;
+    static public float score;
     public float scoreOrigin;
     public GameObject monkey;
 
