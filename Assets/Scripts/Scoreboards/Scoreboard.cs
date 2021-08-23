@@ -5,7 +5,7 @@ namespace DapperDino.Scoreboards
 {
     public class Scoreboard : MonoBehaviour
     {
-        [SerializeField] private int maxScoreboardEntries = 10;
+        [SerializeField] private int maxScoreboardEntries = 5;
         [SerializeField] private Transform highscoresHolderTransform = null;
         [SerializeField] private GameObject scoreboardEntryObject = null;
 
@@ -31,11 +31,10 @@ namespace DapperDino.Scoreboards
         {
             AddEntry(new ScoreboardEntryData()
             {
-                entryName = SwitchToGameScene.groupeName,
-                entryScore = (int)ScoreDisplay.score
+                entryName = testEntryName,
+                entryScore = testEntryScore
             });
         }
-
 
         public void AddEntry(ScoreboardEntryData scoreboardEntryData)
         {
