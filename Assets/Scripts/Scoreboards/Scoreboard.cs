@@ -31,8 +31,8 @@ namespace DapperDino.Scoreboards
         {
             AddEntry(new ScoreboardEntryData()
             {
-                entryName = testEntryName,
-                entryScore = testEntryScore
+                entryName = SwitchToGameScene.groupeName,
+                entryScore = (int)ScoreDisplay.score
             });
         }
 
