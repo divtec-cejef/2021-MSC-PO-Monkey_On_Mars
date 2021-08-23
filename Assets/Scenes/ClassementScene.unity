@@ -1652,11 +1652,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 8404956696876785056, guid: 54b8883c870fd5243adc26fcf9006ee9, type: 3}
       propertyPath: testEntryName
-      value: fgfdg
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 8404956696876785056, guid: 54b8883c870fd5243adc26fcf9006ee9, type: 3}
       propertyPath: testEntryScore
-      value: 567547
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8404956696876785056, guid: 54b8883c870fd5243adc26fcf9006ee9, type: 3}
       propertyPath: maxScoreboardEntries

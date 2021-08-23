@@ -45,7 +45,7 @@ namespace DapperDino.Scoreboards
             //Check if the score is high enough to be added.
             for (int i = 0; i < savedScores.highscores.Count; i++)
             {
-                if (testEntryScore > savedScores.highscores[i].entryScore)
+                if ((int)ScoreDisplay.score > savedScores.highscores[i].entryScore)
                 {
                     savedScores.highscores.Insert(i, scoreboardEntryData);
                     scoreAdded = true;
