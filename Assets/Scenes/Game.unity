@@ -2689,6 +2689,7 @@ GameObject:
   - component: {fileID: 857309007}
   - component: {fileID: 857309010}
   - component: {fileID: 857309011}
+  - component: {fileID: 857309012}
   m_Layer: 6
   m_Name: monkey
   m_TagString: Player
@@ -2868,6 +2869,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3df2841d1d3243f4fa94ebb2afc4a243, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &857309012
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 857309004}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e7a7ec39745ce64eb761d12c979b953, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  coinClonable: {fileID: 1882065393}
+  cloneCoin: 0
+  transformCoin: {fileID: 857309009}
 --- !u!1001 &877278903
 PrefabInstance:
   m_ObjectHideFlags: 0

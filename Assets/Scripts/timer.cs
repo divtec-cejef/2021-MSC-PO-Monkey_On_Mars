@@ -29,7 +29,7 @@ public class timer : MonoBehaviour
             {
                 //charge la scene de jeu (quand on appuiera sur le bouton)
                 SceneManager.LoadScene("ClassementScene");
-                Debug.Log("Time has run out!");
+                
                 timeRemaining = 0;
                 timerIsRunning = false;
             }
