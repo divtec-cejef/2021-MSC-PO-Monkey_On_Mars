@@ -21,7 +21,7 @@ public class ScoreDisplay : MonoBehaviour
 
     public void IncreaseScore()
     {
-        score = monkey.transform.position.y - scoreOrigin;
+        score = monkey.transform.position.y - scoreOrigin + GetCoin.PointsCoins;
         UpdateScoreDisplay();
     }
 
