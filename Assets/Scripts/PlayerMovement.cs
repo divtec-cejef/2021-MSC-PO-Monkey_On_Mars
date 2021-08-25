@@ -26,6 +26,8 @@ public class PlayerMovement : MonoBehaviour
     public Transform transformPalm;
     public GameObject monkey;
 
+    public int nombreInsert;
+
     void Update()
     {
         //initialise le "isGrounded" pour savoir quand est-ce que le personne touche le sol
@@ -38,7 +40,11 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetButtonDown("Jump"))
         {
             isJumping = true;
+
+            //Compte le nombre de fois que la touche pour sauter est pressée
+            nombreInsert++;
         }
+       
 
     }
 
@@ -78,7 +84,7 @@ public class PlayerMovement : MonoBehaviour
             }
 
         }
-        if (numberJump == 2)
+        if (numberJump == 1)
         {
             firstJump = true;
         }
@@ -88,17 +94,27 @@ public class PlayerMovement : MonoBehaviour
             clonePlateforme = false;
         }
 
-        //si le joueur touche le sol ou le nombre de sauts est plus petit que 3
-        if (isGrounded == true || numberJump < 3)
+
+        //Pour que le singe ne rebondisse pas
+        if (nombreInsert >= 2)
+        {
+            isJumping = false;
+            nombreInsert = 0;
+        }
+
+        //si le joueur touche le sol ou le nombre de sauts est plus pSetit que 3
+        if (isGrounded == true)
         {
             //alors si le boutton de saut est pressé
             if (isJumping == true)
             {
+
                 //fait un saut
-                jumpForce = 250;
+                jumpForce = 500;
                 rb.AddForce(new Vector2(0f, jumpForce));
                 isJumping = false;
-                numberJump++;
+                numberJump = 1;
+
             }
         }
     }
