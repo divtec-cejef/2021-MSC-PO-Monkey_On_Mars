@@ -12,7 +12,7 @@ public class RandomCoin : MonoBehaviour
     private GameObject clone;
 
 
-    // Start is called before the first frame update
+    
     void Start()
     {
         
@@ -20,7 +20,7 @@ public class RandomCoin : MonoBehaviour
         {
 
             random = Random.Range((float)-5.71, (float)5.62);
-            clone = Instantiate(coinClonable, new Vector3(random, 30, transformCoin.position.z), transform.rotation);
+            clone = Instantiate(coinClonable, new Vector3(random, transformCoin.position.y, transformCoin.position.z), transform.rotation);
             cloneCoin = true;
         }
 

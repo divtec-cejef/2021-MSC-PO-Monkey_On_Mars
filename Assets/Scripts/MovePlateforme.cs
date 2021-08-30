@@ -31,21 +31,21 @@ public class MovePlateforme : MonoBehaviour
     void Update()
     {
 
-        //pour que la plateforme suive le singe avec un espace de 2
+        //pour que la plateforme suive le singe avec un espace de 5
         //transformMe.position = new Vector3(transformPalm.position.x * (-100), monkey.transform.position.y - 2, transformMe.position.z);
 
         posPlateforme = monkey.transform.position.y;
 
         //print(posPlateforme);
 
-        if (monkey.transform.position.y <= (transformMe.position.y + 2))
+        if (monkey.transform.position.y <= (transformMe.position.y + 5))
         {
             //la plateforme ne doit pas descendre
             transformMe.position = new Vector3(transformPalm.position.x * (-100), transformMe.position.y, transformMe.position.z);
         }
         else
         {
-            transformMe.position = new Vector3(transformPalm.position.x * (-100), monkey.transform.position.y - 2, transformMe.position.z);
+            transformMe.position = new Vector3(transformPalm.position.x * (-100), monkey.transform.position.y - 5, transformMe.position.z);
         }
 
         

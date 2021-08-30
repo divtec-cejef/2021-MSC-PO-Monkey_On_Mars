@@ -26,6 +26,9 @@ public class PlayerMovement : MonoBehaviour
     public Transform transformPalm;
     public GameObject monkey;
 
+    public Animator animator;
+    public SpriteRenderer spriteRenderer;
+
     public int nombreInsert;
 
     void Update()
@@ -50,6 +53,11 @@ public class PlayerMovement : MonoBehaviour
     {
         //lance ce qu'il faut pour que le joueur se déplace de gauche à droite
         MovePlayer(horizontalMovement);
+
+        Flip(rb.velocity.x);
+
+        animator.SetFloat("speed", rb.velocity.x);
+        float characterVelocity = Mathf.Abs(rb.velocity.x);
     }
 
     void MovePlayer(float _horizontalMovement)
@@ -130,5 +138,17 @@ public class PlayerMovement : MonoBehaviour
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(groundCheckLeft.position, groundCheckRadius);
         Gizmos.DrawWireSphere(groundCheckRight.position, groundCheckRadius);
+    }
+
+    void Flip(float _velocity)
+    {
+        if (_velocity > 0.1f)
+        {
+            spriteRenderer.flipX = false;
+        }
+        else if (_velocity < -0.1f)
+        {
+            spriteRenderer.flipX = true;
+        }
     }
 }
