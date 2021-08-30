@@ -7,7 +7,7 @@ public class GetCoin : MonoBehaviour
     {
         if (collision.CompareTag("Coin"))
         {
-            PointsCoins += 10;
+            PointsCoins += 25;
         }
     }
 }
