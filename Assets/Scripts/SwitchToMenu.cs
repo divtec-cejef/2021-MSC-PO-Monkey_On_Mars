@@ -12,5 +12,7 @@ public class SwitchToMenu : MonoBehaviour
 
         //charge la scene de jeu (quand on appuiera sur le bouton)
         SceneManager.LoadScene("MenuMain");
+
+        
     }
 }
