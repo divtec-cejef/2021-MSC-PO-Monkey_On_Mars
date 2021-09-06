@@ -112,7 +112,7 @@ public class PlayerMovement : MonoBehaviour
             nombreInsert = 0;
         }
 
-        //si le joueur touche le sol ou le nombre de sauts est plus pSetit que 3
+        //si le joueur touche le sol ou le nombre de sauts est plus petit que 3
         if (isGrounded == true)
         {
             
@@ -126,9 +126,7 @@ public class PlayerMovement : MonoBehaviour
                 isJumping = false;
                 numberJump = 1;
                 
-
             }
-            
         }
     }
 

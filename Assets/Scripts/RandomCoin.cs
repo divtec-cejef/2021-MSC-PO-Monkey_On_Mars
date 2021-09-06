@@ -19,7 +19,7 @@ public class RandomCoin : MonoBehaviour
         if(cloneCoin == false)
         {
 
-            random = Random.Range((float)-5.71, (float)5.62);
+            random = Random.Range((float)-9.20, 9);
             clone = Instantiate(coinClonable, new Vector3(random, transformCoin.position.y, transformCoin.position.z), transform.rotation);
             cloneCoin = true;
         }

@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - Coin
+  - Vaisseau
+  - Ghost
   layers:
   - Default
   - TransparentFX

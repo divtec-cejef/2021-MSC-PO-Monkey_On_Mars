@@ -37,16 +37,24 @@ public class MovePlateforme : MonoBehaviour
         posPlateforme = monkey.transform.position.y;
 
         //print(posPlateforme);
-
-        if (monkey.transform.position.y <= (transformMe.position.y + 5))
-        {
-            //la plateforme ne doit pas descendre
-            transformMe.position = new Vector3(transformPalm.position.x * (-100), transformMe.position.y, transformMe.position.z);
-        }
-        else
+        if(monkey.transform.position.y + 2 < transformMe.transform.position.y)
         {
             transformMe.position = new Vector3(transformPalm.position.x * (-100), monkey.transform.position.y - 5, transformMe.position.z);
         }
+        else
+        {
+            if (monkey.transform.position.y <= (transformMe.position.y + 5))
+            {
+                //la plateforme ne doit pas descendre
+                transformMe.position = new Vector3(transformPalm.position.x * (-100), transformMe.position.y, transformMe.position.z);
+            }
+            else
+            {
+                transformMe.position = new Vector3(transformPalm.position.x * (-100), monkey.transform.position.y - 5, transformMe.position.z);
+            }
+        }
+
+        
 
         
         //Nous faisons des calculs pour positionner la plateforme correctement devant l'écran
