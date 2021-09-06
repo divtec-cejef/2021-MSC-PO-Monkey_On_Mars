@@ -9,15 +9,13 @@ public class ScoreDisplay : MonoBehaviour
     public GameObject monkey;
     public float posMax;
 
-    Vector3 _lastPosition;
+
 
     private void Start()
     {
-        _lastPosition = this.transform.position;
-
         //Pour faire commencer la valeur du singe à 0
         scoreOrigin = monkey.transform.position.y;
-        posMax = monkey.transform.position.y; ;
+        posMax = -5;
     }
 
     void Update()
@@ -30,15 +28,14 @@ public class ScoreDisplay : MonoBehaviour
     {
 
         
-        if (posMax >= (monkey.transform.position.y - scoreOrigin) * 7)
+        if (monkey.transform.position.y > posMax)
         {
-            score =+ GetCoin.PointsCoins - LoseVaisseau.LosePoints;
+            score = (monkey.transform.position.y - scoreOrigin) * 7 + GetCoin.PointsCoins - LoseVaisseau.LosePoints;
+            Debug.Log(posMax);
+            posMax = monkey.transform.position.y;
         }
-        else
+        else if (monkey.transform.position.y < posMax)
         {
-
-            posMax = (monkey.transform.position.y - scoreOrigin) * 7;
-            score = posMax + GetCoin.PointsCoins - LoseVaisseau.LosePoints;
             if (score < 0)
             {
                 score = 0;
@@ -46,14 +43,7 @@ public class ScoreDisplay : MonoBehaviour
                 GetCoin.PointsCoins = 0;
             }
         }
-
-        if ((this.transform.position.y - _lastPosition.y) > 0)
-           score = (monkey.transform.position.y - scoreOrigin) * 7 + GetCoin.PointsCoins - LoseVaisseau.LosePoints;
-
-
-        _lastPosition = this.transform.position;
         UpdateScoreDisplay();
-        
     }
 
     public void UpdateScoreDisplay()

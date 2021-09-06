@@ -20,11 +20,11 @@ public bool MoveRight;
             transform.Translate(-2 * Time.deltaTime * speed , 0,0);
 			transform.localScale = new Vector2 ((float)-0.6,(float)0.6);
         }
-		if (vaisseau.transform.position.x <= -8)
+		if (vaisseau.transform.position.x <= -9)
 		{
 			MoveRight = true;
 		}
-		else if (vaisseau.transform.position.x >= 8)
+		else if (vaisseau.transform.position.x >= 9)
 		{
 			MoveRight = false;
 		}
