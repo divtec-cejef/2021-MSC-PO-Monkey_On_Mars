@@ -107,7 +107,7 @@ public class PlayerMovement : MonoBehaviour
         else if (posY.transform.position.y < posMax && isGrounded == false)
         {
             animator.SetBool("IsGrounded", false);
-            //animator.SetBool("IsGrounded2", true);
+            animator.SetBool("IsGrounded2", true);
         }
 
         else if (isGrounded == true)
