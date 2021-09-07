@@ -11,5 +11,10 @@ public class LoseVaisseau : MonoBehaviour
         {
             LosePoints += 50;
         }
+
+        else if (collision.CompareTag("Ghost"))
+        {
+            LosePoints += 50;
+        }
     }
 }
