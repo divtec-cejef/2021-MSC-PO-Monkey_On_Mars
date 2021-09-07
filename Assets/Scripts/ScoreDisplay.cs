@@ -16,6 +16,9 @@ public class ScoreDisplay : MonoBehaviour
     private void Start()
     {
         ScoreDisplay.score = 0;
+        GetCoin.PointsCoins = 0;
+        LoseVaisseau.LosePoints = 0;
+
         //Pour faire commencer la valeur du singe à 0
         scoreOrigin = monkey.transform.position.y;
         posMax = -5;
