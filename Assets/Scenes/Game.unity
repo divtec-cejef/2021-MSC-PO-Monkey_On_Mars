@@ -6671,6 +6671,8 @@ MonoBehaviour:
   animator: {fileID: 857309012}
   spriteRenderer: {fileID: 857309008}
   nombreInsert: 0
+  posY: {fileID: 857309009}
+  posMax: 0
 --- !u!212 &857309008
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -6775,7 +6777,7 @@ Animator:
   m_GameObject: {fileID: 857309004}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 8acc383286efb2c46a271ac8af138d07, type: 2}
+  m_Controller: {fileID: 9100000, guid: d058062a145cc734195653f8f64beae3, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

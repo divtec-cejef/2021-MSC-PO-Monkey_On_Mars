@@ -31,6 +31,9 @@ public class PlayerMovement : MonoBehaviour
 
     public int nombreInsert;
 
+    public Transform posY;
+    public float posMax;
+
     void Update()
     {
         //initialise le "isGrounded" pour savoir quand est-ce que le personne touche le sol
@@ -88,8 +91,32 @@ public class PlayerMovement : MonoBehaviour
                     }
                 }
             }
-
         }
+
+        if (isGrounded == true)
+        {
+            posMax = -5;
+        }
+
+        if (posY.transform.position.y > posMax && isGrounded == false)
+        {
+            animator.SetBool("IsGrounded", true);
+            posMax = posY.transform.position.y;
+        }
+
+        else if (posY.transform.position.y < posMax && isGrounded == false)
+        {
+            animator.SetBool("IsGrounded", false);
+            //animator.SetBool("IsGrounded2", true);
+        }
+
+        else if (isGrounded == true)
+        {
+            animator.SetBool("IsGrounded2", false);
+            animator.SetBool("IsGrounded", false);
+            animator.SetFloat("speed", rb.velocity.x);
+        }
+        
         if (numberJump == 1)
         {
             firstJump = true;
