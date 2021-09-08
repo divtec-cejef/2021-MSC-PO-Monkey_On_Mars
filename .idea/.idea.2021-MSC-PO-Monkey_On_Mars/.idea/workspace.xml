@@ -4,14 +4,7 @@
     <list default="true" id="46647329-2381-466c-9e68-5696b95cb894" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.2021-MSC-PO-Monkey_On_Mars/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.2021-MSC-PO-Monkey_On_Mars/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Game.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Game.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/RandomCoin.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/RandomCoin.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/RemoveCoin.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/RemoveCoin.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/RemoveGhost.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/RemoveGhost.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/RemoveVaisseau.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/RemoveVaisseau.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/VaisseauMoving.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/VaisseauMoving.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/InputManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/InputManager.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectVersion.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectVersion.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -79,7 +72,8 @@
       <workItem from="1631003206984" duration="2513000" />
       <workItem from="1631006226386" duration="2565000" />
       <workItem from="1631012852767" duration="1794000" />
-      <workItem from="1631081707234" duration="4458000" />
+      <workItem from="1631081707234" duration="4873000" />
+      <workItem from="1631090422938" duration="2733000" />
     </task>
     <servers />
   </component>
