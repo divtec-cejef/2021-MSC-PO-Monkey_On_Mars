@@ -98,21 +98,13 @@ public class PlayerMovement : MonoBehaviour
             posMax = -5;
         }
 
-        if (posY.transform.position.y > posMax && isGrounded == false)
+        if (isGrounded == false)
         {
             animator.SetBool("IsGrounded", true);
             posMax = posY.transform.position.y;
         }
-
-        else if (posY.transform.position.y < posMax && isGrounded == false)
+        else
         {
-            animator.SetBool("IsGrounded", false);
-            animator.SetBool("IsGrounded2", true);
-        }
-
-        else if (isGrounded == true)
-        {
-            animator.SetBool("IsGrounded2", false);
             animator.SetBool("IsGrounded", false);
             animator.SetFloat("speed", rb.velocity.x);
         }
