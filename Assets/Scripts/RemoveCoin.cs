@@ -1,6 +1,4 @@
-
 using UnityEngine;
-
 
 [RequireComponent(typeof(AudioSource))]
 public class RemoveCoin : MonoBehaviour

@@ -2,12 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="46647329-2381-466c-9e68-5696b95cb894" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/Assets/Imports/Sounds/minecraft-damage-oof-sound-effect-hd.mp3" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Imports/Sounds/minecraft-damage-oof-sound-effect-hd.mp3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/ClassementScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/ClassementScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.2021-MSC-PO-Monkey_On_Mars/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.2021-MSC-PO-Monkey_On_Mars/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Game.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Game.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/RandomCoin.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/RandomCoin.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/RemoveCoin.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/RemoveCoin.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/RemoveGhost.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/RemoveGhost.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/RemoveVaisseau.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/RemoveVaisseau.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/RobotMoving.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/RobotMoving.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/VaisseauMoving.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/VaisseauMoving.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjectSettings/InputManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/InputManager.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectVersion.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectVersion.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" afterDir="false" />
@@ -20,8 +21,17 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/9baebf9af86541678fd15bfdbf5f26eb13a800/29/928f986f/Object.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/RandomGhost.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="ProjectId" id="1xnuVShJxZaKy3gsOroYSNVan1h" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -69,6 +79,7 @@
       <workItem from="1631003206984" duration="2513000" />
       <workItem from="1631006226386" duration="2565000" />
       <workItem from="1631012852767" duration="1794000" />
+      <workItem from="1631081707234" duration="4458000" />
     </task>
     <servers />
   </component>

@@ -8,7 +8,7 @@ public class RandomCoin : MonoBehaviour
     public bool cloneCoin;
     private float random;
     public Transform transformCoin;
-    //clone une pièce
+    //clone une piÃ¨ce
     private GameObject clone;
 
 
