@@ -11,7 +11,7 @@ public class DecorFollow : MonoBehaviour
     public Transform transformBackgroung;
     void Update()
     {
-
+        //si il arrive au dessus de -0.65
         if (monkey.transform.position.y >= -0.65)
         {
             DividendeBackground = monkey.transform.position.y / 6;

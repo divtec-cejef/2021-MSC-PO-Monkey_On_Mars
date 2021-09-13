@@ -45,11 +45,9 @@ public class PlayerMovement : MonoBehaviour
         //test si le bouton de saut est pressé ou non
         if (Input.GetButtonDown("Jump"))
         {
-            //Compte le nombre de fois que la touche pour sauter est pressée
+            //compte le nombre de fois que la touche pour sauter est pressée
             nombreInsert++;
         }
-       
-
     }
 
     void FixedUpdate()
@@ -71,16 +69,13 @@ public class PlayerMovement : MonoBehaviour
         //si il touche le sol
         if (isGrounded == true)
         {
-            //remets la variable du nombre de saut à 0
+            //remet la variable du nombre de saut à 0
             numberJump = 0;
-
 
             if (clonePlateforme == false)
             {
-               
                 if (monkey.transform.position.y >= (transformMe.position.y))
                 {
-
                     if (firstJump == true)
                     {
 
@@ -93,34 +88,37 @@ public class PlayerMovement : MonoBehaviour
             }
         }
 
+        //mets posMax au minimum au début de la partie
         if (isGrounded == true)
         {
             posMax = -5;
         }
 
+        //si il est en l'air l'animation du jetpack se lance
         if (isGrounded == false)
         {
-            animator.SetBool("IsGrounded", true);
+            animator.SetBool("IsInAir", true);
             posMax = posY.transform.position.y;
         }
+        //sinon l'animation s'arrète
         else
         {
-            animator.SetBool("IsGrounded", false);
+            animator.SetBool("IsInAir", false);
             animator.SetFloat("speed", rb.velocity.x);
         }
         
+        //pour ne pas qu'il rebondisse
         if (numberJump == 1)
         {
             firstJump = true;
-        }
+        }   
 
         if (numberJump != 0)
         {
             clonePlateforme = false;
         }
 
-
-        //Pour que le singe ne rebondisse pas
+        //pour que le singe ne rebondisse pas
         if (nombreInsert < 1)
         {
             isJumping = false;
@@ -131,14 +129,13 @@ public class PlayerMovement : MonoBehaviour
             nombreInsert = 0;
         }
 
-        //si le joueur touche le sol ou le nombre de sauts est plus petit que 3
+        //si le joueur touche le sol
         if (isGrounded == true)
         {
             
-            //alors si le boutton de saut est pressé
+            //si le bouton de saut est pressé
             if (isJumping == true)
             {
-
                 //fait un saut
                 jumpForce = 600;
                 rb.AddForce(new Vector2(0f, jumpForce));
@@ -157,6 +154,7 @@ public class PlayerMovement : MonoBehaviour
         Gizmos.DrawWireSphere(groundCheckRight.position, groundCheckRadius);
     }
 
+    //retourne le personnage si il va en positif ou en négatif sur l'axe x
     void Flip(float _velocity)
     {
         if (_velocity > 0.1f)
