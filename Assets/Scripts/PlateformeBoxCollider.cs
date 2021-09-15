@@ -15,7 +15,7 @@ public class PlateformeBoxCollider : MonoBehaviour
         {
 
 
-            if (monkey.transform.position.y >= gameObject.transform.position.y + 0.5)
+            if (monkey.transform.position.y >= gameObject.transform.position.y + 1)
             {
 
                 BoxCollider2D boxCollider2D = gameObject.AddComponent<BoxCollider2D>();
