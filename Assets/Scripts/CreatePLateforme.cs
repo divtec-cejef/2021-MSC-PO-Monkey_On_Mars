@@ -21,7 +21,7 @@ public class CreatePLateforme : MonoBehaviour
     void Update()
     {
 
-        if (nombrePlateforme<= 30)
+        if (nombrePlateforme<= 40)
         {
 
             random = Random.Range((float)-9.20, 9);
