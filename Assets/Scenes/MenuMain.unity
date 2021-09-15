@@ -1510,6 +1510,7 @@ GameObject:
   - component: {fileID: 1896708171}
   - component: {fileID: 1896708173}
   - component: {fileID: 1896708172}
+  - component: {fileID: 1896708174}
   m_Layer: 5
   m_Name: Ghost
   m_TagString: Untagged
@@ -1574,6 +1575,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1896708170}
   m_CullTransparentMesh: 1
+--- !u!114 &1896708174
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1896708170}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ab68b3ab270d9848824584df7c0dad7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  robotVolant: {fileID: 1896708170}
+  MoveTop: 0
+  premierePositionRobot: 0
 --- !u!1 &1992031206
 GameObject:
   m_ObjectHideFlags: 0
