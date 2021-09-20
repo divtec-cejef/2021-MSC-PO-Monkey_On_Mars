@@ -7,13 +7,13 @@ using UnityEngine.SceneManagement;
 public class timer : MonoBehaviour
 {
     public float timeRemaining = 60;
-    public bool timerIsRunning = false;
+    public static bool timerIsRunning = false;
     public Text timeText;
 
     private void Start()
     {
         // Starts the timer automatically
-        timerIsRunning = true;
+        timerIsRunning = false;
     }
 
     void Update()
