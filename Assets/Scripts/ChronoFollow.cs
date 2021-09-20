@@ -9,6 +9,6 @@ public class ChronoFollow : MonoBehaviour
 
     void Update()
     {
-        transform.position = new Vector3(transform.position.x, (monkey.transform.position.y + 6), transform.position.z);
+        transform.position = new Vector3(transform.position.x, (monkey.transform.position.y + (float)5.75), transform.position.z);
     }
 }
