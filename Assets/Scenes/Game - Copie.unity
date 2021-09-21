@@ -12867,7 +12867,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5aa06348f557a344a8577314a626cec3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  countdownTime: 10
+  countdownTime: 5
   countdownDisplay: {fileID: 1072237686}
   monkey: {fileID: 475291020}
 --- !u!114 &1072237686
@@ -12903,7 +12903,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 10
+  m_Text: 5
 --- !u!222 &1072237687
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -16961,6 +16961,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   monkey: {fileID: 475291020}
+  groundCheckLeft: {fileID: 0}
+  groundCheckRight: {fileID: 0}
+  groundCheckRadius: 0
+  collisionLayers:
+    serializedVersion: 2
+    m_Bits: 0
   transformPalm: {fileID: 1486933390}
   transformMe: {fileID: 1527794634}
 --- !u!1 &1574983973

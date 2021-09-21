@@ -21697,7 +21697,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5aa06348f557a344a8577314a626cec3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  countdownTime: 10
+  countdownTime: 5
   countdownDisplay: {fileID: 2126470299}
   monkey: {fileID: 1042954278}
 --- !u!114 &2126470299
@@ -21733,7 +21733,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 10
+  m_Text: 5
 --- !u!222 &2126470300
 CanvasRenderer:
   m_ObjectHideFlags: 0
