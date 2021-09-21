@@ -34,6 +34,8 @@ public class PlayerMovement : MonoBehaviour
     public Transform posY;
     public float posMax;
 
+
+
     void Update()
     {
         //initialise le "isGrounded" pour savoir quand est-ce que le personne touche le sol
@@ -74,15 +76,18 @@ public class PlayerMovement : MonoBehaviour
 
             if (clonePlateforme == false)
             {
-                if (monkey.transform.position.y >= (transformMe.position.y))
+                if (monkey.transform.position.y >= transformMe.position.y)
                 {
                     if (firstJump == true)
                     {
+                        if (MovePlateforme.test == true)
+                        {
 
-                        //clone une plateforme quand il touche le sol
-                        GameObject clone;
-                        clone = Instantiate(plateformeClonable, new Vector3(transformPalm.position.x * (-100), transformMe.position.y, transformMe.position.z), transform.rotation);
-                        clonePlateforme = true;
+                            //clone une plateforme quand il touche le sol
+                            GameObject clone;
+                            clone = Instantiate(plateformeClonable, new Vector3(transformPalm.position.x * (-100), transformMe.position.y - (float)0.6, transformMe.position.z), transform.rotation);
+                            clonePlateforme = true;
+                        }
                     }
                 }
             }
@@ -159,11 +164,13 @@ public class PlayerMovement : MonoBehaviour
     {
         if (_velocity > 0.1f)
         {
-            spriteRenderer.flipX = false;
+            //spriteRenderer.flipX = false;
+            monkey.transform.eulerAngles = new Vector3(0, 0, 0);
         }
         else if (_velocity < -0.1f)
         {
-            spriteRenderer.flipX = true;
+            //spriteRenderer.flipX = true;
+            monkey.transform.eulerAngles = new Vector3(0, 180, 0);
         }
     }
 }

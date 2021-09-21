@@ -12,5 +12,10 @@ public class OpenSceneSansLM : MonoBehaviour
         {
             SceneManager.LoadScene("Game - Copie");
         }
+
+        if (Input.GetKeyDown(KeyCode.L))
+        {
+            SceneManager.LoadScene("Game");
+        }
     }
 }

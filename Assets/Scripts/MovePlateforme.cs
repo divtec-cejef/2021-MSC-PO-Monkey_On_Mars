@@ -12,6 +12,13 @@ public class MovePlateforme : MonoBehaviour
     float posPlateforme;
 
 
+    public Transform groundCheckLeft;
+    public Transform groundCheckRight;
+    public float groundCheckRadius;
+    public LayerMask collisionLayers;
+
+    public static bool test;
+
     //position de la main du leap motion
     public Transform transformPalm;
 
@@ -30,6 +37,13 @@ public class MovePlateforme : MonoBehaviour
 
     void Update()
     {
+
+
+        //initialise le "isGrounded" pour savoir quand est-ce que le personne touche le sol
+        test = Physics2D.OverlapCircle(groundCheckRight.position, groundCheckRadius, collisionLayers) || Physics2D.OverlapCircle(groundCheckLeft.position, groundCheckRadius, collisionLayers);
+        Debug.Log(test);
+
+
 
         //pour que la plateforme suive le singe avec un espace de 5
         //transformMe.position = new Vector3(transformPalm.position.x * (-100), monkey.transform.position.y - 2, transformMe.position.z);

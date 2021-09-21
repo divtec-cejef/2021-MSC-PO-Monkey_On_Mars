@@ -7,15 +7,20 @@ public class PlateformeBoxCollider : MonoBehaviour
 
     public GameObject monkey;
     private bool collider;
-    
+
+
+
+
 
     void Update()
     {
+        
+
         if (collider == false)
         {
 
 
-            if (monkey.transform.position.y >= gameObject.transform.position.y + 1)
+            if (monkey.transform.position.y >= gameObject.transform.position.y + (float)0.65)
             {
 
                 BoxCollider2D boxCollider2D = gameObject.AddComponent<BoxCollider2D>();
@@ -25,7 +30,7 @@ public class PlateformeBoxCollider : MonoBehaviour
         else if (collider == true)
         {
 
-            if (monkey.transform.position.y <= gameObject.transform.position.y + 0.5)
+            if (monkey.transform.position.y <= gameObject.transform.position.y + 0.2)
             {
                 GetComponent<BoxCollider2D>().enabled = false;
 

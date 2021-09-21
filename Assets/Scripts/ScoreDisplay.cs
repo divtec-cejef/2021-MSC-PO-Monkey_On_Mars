@@ -37,7 +37,7 @@ public class ScoreDisplay : MonoBehaviour
         if (monkey.transform.position.y > posMax)
         {
             score = (monkey.transform.position.y - scoreOrigin) * 7 + GetCoin.PointsCoins - LoseVaisseau.LosePoints;
-            Debug.Log(posMax);
+            //Debug.Log(posMax);
             posMax = monkey.transform.position.y;
             scoreMaxHauteur = (monkey.transform.position.y - scoreOrigin) * 7;
         }
