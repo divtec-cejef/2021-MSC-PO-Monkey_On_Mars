@@ -17,5 +17,7 @@ public class OpenSceneSansLM : MonoBehaviour
         {
             SceneManager.LoadScene("Game");
         }
+
+       
     }
 }
