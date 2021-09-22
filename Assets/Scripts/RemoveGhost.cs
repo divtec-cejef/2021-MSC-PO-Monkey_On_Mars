@@ -1,22 +1,30 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 [RequireComponent(typeof(AudioSource))]
 public class RemoveGhost : MonoBehaviour
 {
-    //AudioSource source2;
     public AudioClip sound;
-    void Start()
+    public ParticleSystem particleSystem;
+    private bool readyForDestroy = false;
+
+    IEnumerator particlePlay()
     {
-        //source2 = GameObject.FindObjectOfType<AudioSource>();
+        particleSystem.Play();
+
+        yield return new WaitForSecondsRealtime((float)0.3);
+
+        Destroy(gameObject);
+
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
         {
-            //source2.Play();
-    
             AudioSource.PlayClipAtPoint(sound, transform.position);
-            Destroy(gameObject);
+            StartCoroutine(particlePlay());
         }
     }
 }
