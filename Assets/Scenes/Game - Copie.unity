@@ -16766,6 +16766,7 @@ GameObject:
   - component: {fileID: 1496875828}
   - component: {fileID: 1496875827}
   - component: {fileID: 1496875826}
+  - component: {fileID: 1496875829}
   m_Layer: 0
   m_Name: plateforme clone
   m_TagString: Untagged
@@ -16786,6 +16787,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   monkey: {fileID: 475291020}
+  noFriction: {fileID: 0}
 --- !u!212 &1496875827
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -16851,6 +16853,32 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &1496875829
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1496875825}
+  m_Enabled: 0
+  m_Density: 1
+  m_Material: {fileID: 6200000, guid: 34f58621f9f160e42bb58e76879b2d6a, type: 2}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 8.81, y: 2.29}
+    newSize: {x: 8.81, y: 2.29}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 8.81, y: 2.29}
+  m_EdgeRadius: 0
 --- !u!1 &1527794631
 GameObject:
   m_ObjectHideFlags: 0
