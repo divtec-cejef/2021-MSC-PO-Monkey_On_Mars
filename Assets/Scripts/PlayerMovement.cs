@@ -1,0 +1,176 @@
+using UnityEngine;
+
+public class PlayerMovement : MonoBehaviour
+{
+    //initialisation des variables
+    public float moveSpeedPlayer;
+    public float jumpForce;
+    public int numberJump;
+
+    public Transform groundCheckLeft;
+    public Transform groundCheckRight;
+    public float groundCheckRadius;
+    public LayerMask collisionLayers;
+
+    public bool isJumping;
+    public bool isGrounded;
+
+    public Rigidbody2D rb;
+    private Vector3 velocity = Vector3.zero;
+    private float horizontalMovement;
+
+    public GameObject plateformeClonable;
+    public bool clonePlateforme;
+    public bool firstJump = false;
+    public Transform transformMe;
+    public Transform transformPalm;
+    public GameObject monkey;
+
+    public Animator animator;
+    public SpriteRenderer spriteRenderer;
+
+    public int nombreInsert;
+
+    public Transform posY;
+    public float posMax;
+
+
+
+    void Update()
+    {
+        //initialise le "isGrounded" pour savoir quand est-ce que le personne touche le sol
+        isGrounded = Physics2D.OverlapCircle(groundCheckRight.position, groundCheckRadius, collisionLayers) || Physics2D.OverlapCircle(groundCheckLeft.position, groundCheckRadius, collisionLayers);
+
+        //initialise variable pour les mouvement gauche droite
+        horizontalMovement = Input.GetAxis("Horizontal") * moveSpeedPlayer * Time.deltaTime;
+
+        //test si le bouton de saut est pressé ou non
+        if (Input.GetButtonDown("Jump"))
+        {
+            //compte le nombre de fois que la touche pour sauter est pressée
+            nombreInsert++;
+        }
+    }
+
+    void FixedUpdate()
+    {
+        //lance ce qu'il faut pour que le joueur se déplace de gauche à droite
+        MovePlayer(horizontalMovement);
+
+        Flip(rb.velocity.x);
+
+        animator.SetFloat("speed", rb.velocity.x);
+        float characterVelocity = Mathf.Abs(rb.velocity.x);
+    }
+
+    void MovePlayer(float _horizontalMovement)
+    {
+        Vector3 targetVelocity = new Vector2(_horizontalMovement, rb.velocity.y);
+        rb.velocity = Vector3.SmoothDamp(rb.velocity, targetVelocity, ref velocity, .05f);
+
+        //si il touche le sol
+        if (isGrounded == true)
+        {
+            //remet la variable du nombre de saut à 0
+            numberJump = 0;
+
+            if (clonePlateforme == false)
+            {
+                if (monkey.transform.position.y >= transformMe.position.y)
+                {
+                    if (firstJump == true)
+                    {
+                        if (MovePlateforme.test == true)
+                        {
+
+                            //clone une plateforme quand il touche le sol
+                            GameObject clone;
+                            clone = Instantiate(plateformeClonable, new Vector3(transformPalm.position.x * (-100), transformMe.position.y - (float)0.6, transformMe.position.z), transform.rotation);
+                            clonePlateforme = true;
+                        }
+                    }
+                }
+            }
+        }
+
+        //mets posMax au minimum au début de la partie
+        if (isGrounded == true)
+        {
+            posMax = -5;
+        }
+
+        //si il est en l'air l'animation du jetpack se lance
+        if (isGrounded == false)
+        {
+            animator.SetBool("IsInAir", true);
+            posMax = posY.transform.position.y;
+        }
+        //sinon l'animation s'arrète
+        else
+        {
+            animator.SetBool("IsInAir", false);
+            animator.SetFloat("speed", rb.velocity.x);
+        }
+        
+        //pour ne pas qu'il rebondisse
+        if (numberJump == 1)
+        {
+            firstJump = true;
+        }   
+
+        if (numberJump != 0)
+        {
+            clonePlateforme = false;
+        }
+
+        //pour que le singe ne rebondisse pas
+        if (nombreInsert < 1)
+        {
+            isJumping = false;
+        }
+        else
+        {
+            isJumping = true;
+            nombreInsert = 0;
+        }
+
+        //si le joueur touche le sol
+        if (isGrounded == true)
+        {
+            
+            //si le bouton de saut est pressé
+            if (isJumping == true)
+            {
+                //fait un saut
+                jumpForce = 600;
+                rb.AddForce(new Vector2(0f, jumpForce));
+                isJumping = false;
+                numberJump = 1;
+                
+            }
+        }
+    }
+
+    //sert à gérer si les gizmos touchent une zone de colision ou non
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(groundCheckLeft.position, groundCheckRadius);
+        Gizmos.DrawWireSphere(groundCheckRight.position, groundCheckRadius);
+    }
+
+    //retourne le personnage si il va en positif ou en négatif sur l'axe x
+    void Flip(float _velocity)
+    {
+        if (_velocity > 0.1f)
+        {
+            //spriteRenderer.flipX = false;
+            monkey.transform.eulerAngles = new Vector3(0, 0, 0);
+        }
+        else if (_velocity < -0.1f)
+        {
+            //spriteRenderer.flipX = true;
+            monkey.transform.eulerAngles = new Vector3(0, 180, 0);
+        }
+    }
+}
